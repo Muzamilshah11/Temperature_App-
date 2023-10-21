@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+<style>
+body{
+    padding: 50px 100px;
+    
+}
+h1{
+    text-align: center;
+}
+#continoer{
+    text-align: center;
+    background-color: greenyellow;
+    padding: 50px;
+}
+.input-div{
+    display: inline-block;
+}
+.inp{
+    padding: 5px 10px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+}
+label{
+    font-size: 32px;
+}
+button{
+    padding: 5px 10px ;
+    margin-top: 30px;
+    background-color: black;
+    color:white;
+    font-size: 22px;
+}
+h2{
+
+    font-size: 25px;
+    color:blue;
+    font-family:Georgia;
+
+}
+
+</style>
+
+
+
+</head>
+<body>
+<h1>Temperature Converter</h1>
+<form onsubmit="dosum(event)">
+    <div id="continoer">
+        <div class="input-div">
+            <label>Celsius</label><br>
+            <input type="number" id="cel" value="0" class="inp"/>
+        </div>
+        <div class="input-div">
+            
+            <h2 id="simsim"> Check Your Fahrenheit</h2>
+        </div>
+        <div><button type="submit">Convert Now</button></div>
+
+    </div>
+</form>
+
+    <script>
+        function dosum(event){
+            console.log("Active Button");
+            event.preventDefault();
+            let cell= document.querySelector("#cel").value;
+            let f = (cell * 9/5) + 32;
+
+            let message= "Your Fahrenheit is:-- "+f;
+            document.querySelector("#simsim").innerHTML=message;
+        }
+
+
+            
+    </script>
+    
+</body>
+</html>
